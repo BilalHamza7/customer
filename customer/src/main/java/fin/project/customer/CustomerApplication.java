@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @SpringBootApplication
-public class CustomerApplication {
+public class CustomerApplication {	
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerApplication.class, args);
 	}

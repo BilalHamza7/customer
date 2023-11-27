@@ -6,6 +6,7 @@ import fin.project.customer.exception.CustomerNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,8 +16,8 @@ public class CustomerService {
     CustomerRepository customerRepository;
 
     public Customer createCustomer(Customer customer)    {
-
         return customerRepository.save(customer);
+
     }
 
     public Customer updateCustomer(Customer update, int id)    {
@@ -28,5 +29,9 @@ public class CustomerService {
                     customer.setAddress(update.getAddress());
                     return customerRepository.save(customer);
                 }).orElseThrow(()-> new CustomerNotFoundException(id));
+    }
+
+    public Optional<Customer> getCustomer(int id) {
+        return customerRepository.findById(id);
     }
 }
