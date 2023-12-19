@@ -2,6 +2,7 @@ package fin.project.customer.controller;
 
 import fin.project.customer.data.Customer;
 import fin.project.customer.data.CustomerLogin;
+import fin.project.customer.data.CustomerLoginRepository;
 import fin.project.customer.service.CustomerLoginService;
 import fin.project.customer.service.CustomerService;
 import fin.project.customer.service.OrderService;
@@ -55,7 +56,7 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/recordCredentials")
-    public int recordCredentials(@RequestBody CustomerLogin createLogin){
+    public CustomerLogin recordCredentials(@RequestBody CustomerLogin createLogin){
         return customerLoginService.recordCredentials(createLogin);
     }
 
@@ -64,8 +65,8 @@ public class CustomerController {
         return orderService.placeOrder(order);
     }
 
-    @GetMapping("/order/getOrder")
-    public List<Order> getOrder(){
-        return orderService.getOrder();
+    @GetMapping("/order/getOrder/{cusId}")
+    public List<Order> getOrder(@PathVariable int cusId){
+        return orderService.getOrder(cusId);
     }
 }

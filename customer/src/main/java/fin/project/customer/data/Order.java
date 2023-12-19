@@ -12,8 +12,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "customer_name")
-    private String customerName;
+    @Column(name = "cus_id")
+    private int cusId;
 
     @Column(name = "product_name")
     private String productName;
@@ -30,9 +30,6 @@ public class Order {
     @Column(name = "order_date")
     private Date orderDate;
 
-    @Column(name = "status")
-    private String status;
-
     public int getId() {
         return id;
     }
@@ -41,12 +38,12 @@ public class Order {
         this.id = id;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public int getCusId() {
+        return cusId;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCusId(int cusId) {
+        this.cusId = cusId;
     }
 
     public String getProductName() {
@@ -87,13 +84,5 @@ public class Order {
 
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

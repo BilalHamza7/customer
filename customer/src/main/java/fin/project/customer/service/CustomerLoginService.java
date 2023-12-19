@@ -20,9 +20,8 @@ public class CustomerLoginService {
         return customerLoginRepository.findByUsernameAndPassword(username, password);
     }
 
-    public int recordCredentials(CustomerLogin createLogin) {
-        var result = customerLoginRepository.save(createLogin);
-        return result.getId();
+    public CustomerLogin recordCredentials(CustomerLogin createLogin) {
+        return customerLoginRepository.save(createLogin);
     }
 
     public Optional<CustomerLogin> getCustomerLogin(int id) {

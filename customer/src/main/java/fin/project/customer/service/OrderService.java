@@ -18,7 +18,7 @@ import java.util.List;
         return orderRepository.save(order);
     }
 
-    public List<Order> getOrder() {
-        return orderRepository.findAll();
+    public List<Order> getOrder(int cusId) {
+        return orderRepository.findByCusId(cusId);
     }
 }
