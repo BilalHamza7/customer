@@ -10,6 +10,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private int id;
 
     @Column(name = "cus_id")
@@ -38,13 +39,9 @@ public class Order {
         this.id = id;
     }
 
-    public int getCusId() {
-        return cusId;
-    }
+    public int getCusId() { return cusId; }
 
-    public void setCusId(int cusId) {
-        this.cusId = cusId;
-    }
+    public void setCusId(int cusId) { this.cusId = cusId; }
 
     public String getProductName() {
         return productName;
